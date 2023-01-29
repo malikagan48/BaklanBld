@@ -1,0 +1,334 @@
+﻿@{
+    if (Session["adminid"] == null)
+    {
+        Response.Redirect("/yonetimpaneli/giris/");
+    }
+
+    string ControllerAdi = ViewContext.RouteData.GetRequiredString("controller");
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Baklan Belediyesi Admin</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="/Content/AdminLayout/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="/Content/AdminLayout/css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="/Content/AdminLayout/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="/Content/AdminLayout/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- full calendar css-->
+    <link href="/Content/AdminLayout/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+    <link href="/Content/AdminLayout/assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <!-- easy pie chart-->
+    <link href="/Content/AdminLayout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="/Content/AdminLayout/css/owl.carousel.css" type="text/css">
+    <link href="/Content/AdminLayout/css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="/Content/AdminLayout/css/fullcalendar.css">
+    <link href="/Content/AdminLayout/css/widgets.css" rel="stylesheet">
+    <link href="/Content/AdminLayout/css/style.css" rel="stylesheet">
+    <link href="/Content/AdminLayout/css/style-responsive.css" rel="stylesheet" />
+    <link href="/Content/AdminLayout/css/xcharts.min.css" rel=" stylesheet">
+    <link href="/Content/AdminLayout/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    <link href="~/ckeditor/samples/css/samples.css" rel="stylesheet" />
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script src="~/ckeditor/adapters/jquery.js"></script>
+    <script src="~/ckeditor/plugins/easyimage/plugin.js"></script>
+    <script src="~/ckeditor/uploadimage/plugin.js"></script>
+    <script src="~/ckfinder/ckfinder.js"></script>
+    <script src="~/Scripts/jquery-3.6.1.min.js"></script>
+    <script src="/Content/AdminLayout/js/jquery.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <script src="~/Scripts/DataTables/dataTables.bootstrap4.js"></script>
+
+</head>
+<body>
+    <!-- container section start -->
+    <section id="container" class="">
+
+
+        <header class="header dark-bg">
+            <div class="toggle-nav">
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+            </div>
+
+            <!--logo start-->
+            <a href="/yonetimpaneli" class="logo">Baklan Belediyesi <span class="lite">Admin</span></a>
+            <!--logo end-->
+
+
+
+            <div class="top-nav notification-row">
+                <!-- notificatoin dropdown start-->
+                <ul class="nav pull-right top-menu">
+
+                    <!-- task notificatoin start -->
+                    <!-- alert notification end-->
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+                            <span class="username">Admin</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+
+
+                    </li>
+                    <li>
+                        <a href="/Admin/Logout/"><i class="icon_key_alt"></i> Çıkış Yap</a>
+                    </li>
+
+                </ul>
+                </li>
+                <!-- user login dropdown end -->
+                </ul>
+                <!-- notificatoin dropdown end-->
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu">
+                    <li class="active">
+                        <a class="" href="/yonetimpaneli">
+                            <i class="icon_house_alt"></i>
+                            <span>Ana Sayfa</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#" class="">
+                            <i class="icon_desktop"></i>
+                            <span>İlçemiz Hakkında</span>
+                            <span class="arrow_carrot-right"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="/IsmininAnlami/Index/">İsminin Anlamı</a></li>
+                            <li><a class="" href="/Tarihi/Index/">Tarihi</a></li>
+                            <li><a class="" href="/CografiYapisi/Index/">Coğrafi Yapısı</a></li>
+                            <li><a class="" href="/Nüfusu/Index/">Nüfusu</a></li>
+                            <li><a class="" href="/Egitim/Index/">Eğitim</a></li>
+                            <li><a class="" href="/Saglik/Index/">Sağlık</a></li>
+                            <li><a class="" href="/Turizm/Index/">Turizm</a></li>
+                            <li><a class=""href="/TurizmKategori/Index/">Turizm Kategori</a></li>
+                            <li><a class="" href="/Ekonomi/Index/">Ekonomi</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#" class="">
+                            <i class="icon_document_alt"></i>
+                            <span>Başkanımız</span>
+                            <span class="arrow_carrot-right"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="/BaskanHakkinda/Index/">Özgeçmişi</a></li>
+                            <li><a class="" href="/BaskanMesaj/Index/">Mesajı</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#" class="">
+                            <i class="icon_desktop"></i>
+                            <span>Belediyemiz</span>
+                            <span class=" arrow_carrot-right"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="/MeclisUyeleri/Index/">Meclis Üyelerimiz</a></li>
+                            <li><a class="" href="/Mudurlukler/Index/">Müdürlüklerimiz</a></li>
+                            <li><a class="" href="/EncümenUyeler/Index/">Encümen Üyelerimiz</a></li>
+                            <li><a class="" href="/EskiBaskanlar/Index/">Eski Başkanlarımız</a></li>
+                            <li><a class="" href="/Muhtarlik/Index/">Muhtarlarımız</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#" class="">
+                            <i class="icon_table"></i>
+                            <span>Hizmetlerimiz</span>
+                            <span class=" arrow_carrot-right"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="/CevreVeTemizlik/Index/">Çevre Ve Temizlik</a></li>
+                            <li><a class="" href="/EmlakVergisi/Index/">Emlak Vergisi</a></li>
+                            <li><a class="" href="/EvlenmeIsleri/Index/">Evlenme İşleri</a></li>
+                            <li><a class="" href="/InsaatRuhsati/Index/">İnşaat Ruhsatı</a></li>
+                            <li><a class="" href="/IsyeriAcmaRuhsati/Index/">İşyeri Açma Ruhsatı</a></li>
+                            <li><a class="" href="/IlanVeReklam/Index/">İlan Ve Reklam</a></li>
+                            <li><a class="" href="/TatilCalismaRuhsati/Index/">Tatil Çalışma Ruhsatı</a></li>
+                            <li><a class="" href="/HizmetStandarti/Index/">Hizmet Standartı</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#" class="">
+                            <i class="icon_table"></i>
+                            <span>Projelerimiz</span>
+                            <span class=" arrow_carrot-right"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="/TamamlananProjeler/Index/">Tamamlanan Projeler</a></li>
+                            <li><a class="" href="/TamamlananProjelerKategori/Index/">TamamlananKategori</a></li>
+
+                            <li><a class="" href="/DevamEdenProjeler/Index/">Devam eden Projeler</a></li>
+                            <li><a class="" href="/DevamEdenProjelerKategori/Index/">DevamEdenKategori</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#" class="">
+                            <i class="icon_documents_alt"></i>
+                            <span>Halkla İlişkiler</span>
+                            <span class=" arrow_carrot-right"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="/BaklanBelediyeSporKlubü/Index/">Spor Klubü</a></li>
+                            <li><a class="" href="/Duyurular/Index/">Duyurular</a></li>
+                            <li><a class="" href="/HaberlerSlider/Index/">Haberler</a></li>
+                            <li><a class="" href="/Ihaleler/Index/">İhaleler</a></li>
+                            <li><a class="" href="/Etkinlikler/Index/">Etkinlikler</a></li>
+                            <li><a class="" href="/Festivaller/Index/">Festivaller</a></li>
+                            <li><a class="" href="/OnemliTelefonlar/Index/">Önemli Telefonlar</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="#" class="">
+                            <i class="icon_table"></i>
+                            <span>Galeri</span>
+                            <span class=" arrow_carrot-right"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="/FotoGaleri/Index/">Foto Galeri</a></li>
+                            <li><a class="" href="/FotoGaleriKategori/Index/">Foto Galeri Kategori</a></li>
+
+                            <li><a class="" href="/VideoGaleri/Index/">Video Galeri</a></li>
+                            <li><a class="" href="/VideoGaleriKategori/Index/">Video Galeri Kategori</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="" href="/Iletisim/Index/">
+                            <i class="icon_genius"></i>
+                            <span>İletişim</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                @RenderBody()
+            </section>
+        </section>
+
+
+        <!--main content end-->
+    </section>
+    <!-- container section start -->
+    <!-- javascripts -->
+    <script src="/Content/AdminLayout/js/jquery-ui-1.10.4.min.js"></script>
+    <script type="text/javascript" src="/Content/AdminLayout/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <!-- bootstrap -->
+    <script src="/Content/AdminLayout/js/bootstrap.min.js"></script>
+    <!-- nice scroll -->
+    <script src="/Content/AdminLayout/js/jquery.scrollTo.min.js"></script>
+    <script src="/Content/AdminLayout/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <!-- charts scripts -->
+    <script src="/Content/AdminLayout/assets/jquery-knob/js/jquery.knob.js"></script>
+    <script src="/Content/AdminLayout/js/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="/Content/AdminLayout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="/Content/AdminLayout/js/owl.carousel.js"></script>
+    <!-- jQuery full calendar -->
+    <
+    <script src="/Content/AdminLayout/js/fullcalendar.min.js"></script>
+    <!-- Full Google Calendar - Calendar -->
+    <script src="/Content/AdminLayout/assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
+    <!--script for this page only-->
+    <script src="/Content/AdminLayout/js/calendar-custom.js"></script>
+    <script src="/Content/AdminLayout/js/jquery.rateit.min.js"></script>
+    <!-- custom select -->
+    <script src="/Content/AdminLayout/js/jquery.customSelect.min.js"></script>
+    <script src="/Content/AdminLayout/assets/chart-master/Chart.js"></script>
+
+    <!--custome script for all page-->
+    <script src="/Content/AdminLayout/js/scripts.js"></script>
+    <!-- custom script for this page-->
+    <script src="/Content/AdminLayout/js/sparkline-chart.js"></script>
+    <script src="/Content/AdminLayout/js/easy-pie-chart.js"></script>
+    <script src="/Content/AdminLayout/js/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="/Content/AdminLayout/js/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/Content/AdminLayout/js/xcharts.min.js"></script>
+    <script src="/Content/AdminLayout/js/jquery.autosize.min.js"></script>
+    <script src="/Content/AdminLayout/js/jquery.placeholder.min.js"></script>
+    <script src="/Content/AdminLayout/js/gdp-data.js"></script>
+    <script src="/Content/AdminLayout/js/morris.min.js"></script>
+    <script src="/Content/AdminLayout/js/sparklines.js"></script>
+    <script src="/Content/AdminLayout/js/charts.js"></script>
+    <script src="/Content/AdminLayout/js/jquery.slimscroll.min.js"></script>
+    <script>
+        //knob
+        $(function () {
+            $(".knob").knob({
+                'draw': function () {
+                    $(this.i).val(this.cv + '%')
+                }
+            })
+        });
+
+        //carousel
+        $(document).ready(function () {
+            $("#owl-slider").owlCarousel({
+                navigation: true,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true
+
+            });
+        });
+
+        //custom select box
+
+        $(function () {
+            $('select.styled').customSelect();
+        });
+
+        /* ---------- Map ---------- */
+        $(function () {
+            $('#map').vectorMap({
+                map: 'world_mill_en',
+                series: {
+                    regions: [{
+                        values: gdpData,
+                        scale: ['#000', '#000'],
+                        normalizeFunction: 'polynomial'
+                    }]
+                },
+                backgroundColor: '#eef3f7',
+                onLabelShow: function (e, el, code) {
+                    el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+                }
+            });
+        });
+    </script>
+
+
+</body>
+</html>

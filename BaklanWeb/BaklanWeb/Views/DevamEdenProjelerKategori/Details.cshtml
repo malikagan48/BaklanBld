@@ -1,0 +1,35 @@
+﻿@model BaklanWeb.Models.Model.DevamEdenProjelerKategori
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Detay</h2>
+
+<div>
+    <h4>DevamEdenProjelerKategori</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DevamEdenProjelerKategoriAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevamEdenProjelerKategoriAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevamEdenProjelerKategoriAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevamEdenProjelerKategoriAciklama)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Güncelle", "Edit", new { id = Model.DevamEdenProjelerKategoriId }) |
+    @Html.ActionLink("Geri Dön", "Index")
+</p>

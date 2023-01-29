@@ -1,0 +1,53 @@
+﻿@model IEnumerable<BaklanWeb.Models.Model.TamamlananProjeler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TamamlananProjelerKategori.TamamlananProjelerKategoriAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TamamlananProjelerBaslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TamamlananProjelerAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TamamlananProjelerResimURL)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TamamlananProjelerKategori.TamamlananProjelerKategoriAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TamamlananProjelerBaslik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TamamlananProjelerAciklama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TamamlananProjelerResimURL)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "Edit", new { id = item.TamamlananProjelerId }) |
+
+                @Html.ActionLink("Sil", "Delete", new { id = item.TamamlananProjelerId })
+            </td>
+        </tr>
+    }
+
+</table>

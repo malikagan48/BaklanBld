@@ -1,0 +1,35 @@
+﻿@model BaklanWeb.Models.Model.FotoGaleriKategori
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Detay</h2>
+
+<div>
+    <h4>FotoGaleriKategori</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FotoGaleriKategoriAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FotoGaleriKategoriAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FotoGaleriKategoriAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FotoGaleriKategoriAciklama)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Güncelle", "Edit", new { id = Model.FotoGaleriKategoriId }) |
+    @Html.ActionLink("Geri Dön", "Index")
+</p>

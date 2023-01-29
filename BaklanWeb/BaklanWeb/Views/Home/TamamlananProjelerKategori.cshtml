@@ -1,0 +1,12 @@
+﻿@model IEnumerable<BaklanWeb.Models.Model.TamamlananProjelerKategori>
+@using BaklanWeb.Helper;
+
+<div class="shuffle-btn-group">
+    @foreach (var item in Model)
+    {
+        <label for="commercial">
+            <input type="radio" name="shuffle-filter" id="" value=""><a href="/TamamlananProjeler/@SeoHelper.ToSeoUrl(item.TamamlananProjelerKategoriAd).ToLower()/@item.TamamlananProjelerKategoriId">@item.TamamlananProjelerKategoriAd</a><span> (@item.TamamlananProjelers.Count())</span>
+        </label>
+    }
+</div>
+

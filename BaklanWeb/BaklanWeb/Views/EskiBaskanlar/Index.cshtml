@@ -1,0 +1,28 @@
+﻿@model IEnumerable<BaklanWeb.Models.Model.EskiBaskanlar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EskiBaskanlarAciklama)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EskiBaskanlarAciklama)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.EskiBaskanlarId }) 
+        </td>
+    </tr>
+}
+
+</table>

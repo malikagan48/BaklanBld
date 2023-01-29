@@ -1,0 +1,11 @@
+﻿@model IEnumerable<BaklanWeb.Models.Model.VideoGaleriKategori>
+@using BaklanWeb.Helper;
+
+<div class="shuffle-btn-group">
+    @foreach (var item in Model)
+    {
+        <label for="commercial">
+            <input type="radio" name="shuffle-filter" id="" value=""><a href="/VideoGaleri/@SeoHelper.ToSeoUrl(item.VideoGaleriKategoriAd).ToLower()/@item.VideoGaleriKategoriId">@item.VideoGaleriKategoriAd</a><span> (@item.VideoGaleris.Count())</span>
+        </label>
+    }
+</div>

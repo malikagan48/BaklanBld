@@ -1,0 +1,68 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@using BaklanWeb.Helper;
+@model IPagedList<BaklanWeb.Models.Model.Duyurular>
+
+@{
+    ViewBag.Title = "Duyurular";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div id="banner-area" class="banner-area" style="background-image:url(/Content/constra-1.0.0/images/banner/banner1.jpg)">
+    <div class="banner-text">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="banner-heading">
+                        <h1 class="banner-title">Duyurular</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="/Duyurular/">Duyurular</a></li>
+
+                            </ol>
+                        </nav>
+                    </div>
+                </div><!-- Col end -->
+            </div><!-- Row end -->
+        </div><!-- Container end -->
+    </div><!-- Banner text end -->
+</div><!-- Banner area end -->
+<section id="main-container" class="main-container">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-8 mb-5 mb-lg-0 order-0 order-lg-1">
+              
+                <div class="post">
+                    @foreach (var item in Model)
+                    {
+                        <div class="post-media post-image">
+                            <img loading="lazy" src="@item.DuyurularResimURL" class="img-fluid" alt="post-image">
+                        </div>
+                        <div class="post-body">
+                            <div class="entry-header">
+
+                                <h2 class="entry-title">
+                                    <a href="/DuyurularPost/@SeoHelper.ToSeoUrl(item.DuyurularBaslik).ToLower()-@item.DuyurularId">@item.DuyurularBaslik</a>
+                                </h2>
+                            </div><!-- header end -->
+                            <div class="entry-content">
+
+                            </div>
+                            <div class="post-footer">
+                                <a href="/DuyurularPost/@SeoHelper.ToSeoUrl(item.DuyurularBaslik).ToLower()-@item.DuyurularId" class="btn btn-primary">Devamını Oku</a>
+                            </div>
+                        </div><!-- post-body end -->
+                    }
+                </div><!-- 1st post end -->
+             
+                <nav class="paging" aria-label="Page navigation example">
+                    <ul class="pagination">
+                        @Html.PagedListPager(Model, Sayfa => Url.Action("Duyurular", "Home", new { Sayfa }), PagedListRenderOptions.Classic)
+                    </ul>
+                </nav>
+
+            </div><!-- Content Col end -->
+        </div><!-- Main row end -->
+    </div><!-- Container end -->
+</section>

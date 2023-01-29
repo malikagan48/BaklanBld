@@ -1,0 +1,86 @@
+﻿@using BaklanWeb.Helper;
+@model IEnumerable<BaklanWeb.Models.Model.Duyurular>
+
+@{
+    Layout = null;
+
+}
+<section class="timeline-carousel">
+    <div class="row text-center">
+        <div class="col-12">
+
+            <h3 class="section-sub-title">Duyurular</h3>
+
+        </div>
+    </div>
+
+    <div class="timeline-carousel__item-wrapper" data-js="timeline-carousel">
+        @foreach (var item in Model)
+        {
+            <div class="timeline-carousel__item">
+
+                <div class="timeline-carousel__image">
+                    <div class="media-wrapper media-wrapper--overlay" style="background: url('@item.DuyurularResimURL') center center; background-size:cover;"></div>
+                </div>
+                <div class="timeline-carousel__item-inner">
+                    <span class="month"><a href="/DuyurularPost/@SeoHelper.ToSeoUrl(item.DuyurularBaslik).ToLower()-@item.DuyurularId">@item.DuyurularBaslik</a></span>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<section id="main-container" class="main-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="column-title">DUYURULAR</h3>
+                </div><!-- Col end -->
+                <div class="col-lg-6 mt-5 mt-lg-0">
+
+                    <div id="page-slider" class="page-slider small-bg">
+                        @foreach (var item in Model)
+                        {
+                            <div class="item" style="background-image:url(@item.DuyurularResimURL)">
+                                <div class="container">
+                                    <div class="box-slider-content">
+                                        <div class="box-slider-text">
+                                            <h2 class="box-slide-title">@item.DuyurularBaslik</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- Item 1 end -->
+                        }
+                        </div><!-- Page slider end-->
+
+                </div><!-- Col end -->
+            </div><!-- Content row end -->
+        </div><!-- Container end -->
+    </section>*@
+
+
+

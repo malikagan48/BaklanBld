@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BaklanWeb.Models.Model.FotoGaleriKategori>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Foto Galeri  Kategori</h2>
+
+<p>
+    @Html.ActionLink("Yeni Oluştur", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FotoGaleriKategoriAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FotoGaleriKategoriAciklama)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FotoGaleriKategoriAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FotoGaleriKategoriAciklama)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "Edit", new { id = item.FotoGaleriKategoriId }) |
+                @Html.ActionLink("Detay", "Details", new { id = item.FotoGaleriKategoriId }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.FotoGaleriKategoriId })
+            </td>
+        </tr>
+    }
+
+</table>

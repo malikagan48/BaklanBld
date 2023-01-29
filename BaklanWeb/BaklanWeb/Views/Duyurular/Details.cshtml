@@ -1,0 +1,43 @@
+﻿@model BaklanWeb.Models.Model.Duyurular
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Slider Detay</h2>
+
+<div>
+    <h4>Duyurular</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DuyurularBaslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DuyurularBaslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DuyurularAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DuyurularAciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DuyurularResimURL)
+        </dt>
+
+        <dd>
+            <img src="@Model.DuyurularResimURL" width="150" height="50" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Güncelle", "Edit", new { id = Model.DuyurularId }) |
+    @Html.ActionLink("Geri Dön", "Index")
+</p>

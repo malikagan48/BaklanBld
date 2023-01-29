@@ -1,0 +1,52 @@
+﻿@model IEnumerable<BaklanWeb.Models.Model.FotoGaleri>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FotoGaleriKategori.FotoGaleriKategoriAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FotoGaleriBaslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FotoGaleriAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FotoGaleriResimURL)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FotoGaleriKategori.FotoGaleriKategoriAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FotoGaleriBaslik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FotoGaleriAciklama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FotoGaleriResimURL)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "Edit", new { id = item.FotoGaleriId }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.FotoGaleriId })
+            </td>
+        </tr>
+    }
+
+</table>

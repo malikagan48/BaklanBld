@@ -1,0 +1,54 @@
+﻿@using BaklanWeb.Helper;
+@model IEnumerable<BaklanWeb.Models.Model.HaberlerSlider>
+
+@{
+    Layout = null;
+
+}
+
+<section class="timeline-carousel">
+    <div class="row text-center">
+        <div class="col-12">
+
+            <h3 class="section-sub-title">Haberler</h3>
+
+        </div>
+    </div>
+    <div class="newsSliderConr">
+        <div class="newsSlider">
+            @foreach (var item in Model)
+            {
+                <div class="newsSliderIn">
+
+                    <div class="slideTit">
+                        <span>
+                            <h2>
+                                <a href="/HaberlerPost/@SeoHelper.ToSeoUrl(item.HaberlerBaslik).ToLower()-@item.HaberlerSliderId">@item.HaberlerBaslik</a>
+                            </h2>
+                        </span>
+                    </div>
+    <img src="@item.HaberlerResimURL"
+         alt="1">
+    
+
+                </div>
+            }
+        </div>
+        <div class="navSlider">
+            <button id="left"><!--<i class="fa-solid fa-chevron-left"></i>-->< </button>
+            <ul id="uli" class="uld">
+                <li class="lim active">1</li>
+                <li class="lim">2</li>
+                <li class="lim">3</li>
+                <li class="lim">4</li>
+                <li class="lim">5</li>
+                <li class="lim">6</li>
+                <li class="lim">7</li>
+                <li class="lim">8</li>
+                <li class="lim">9</li>
+                <li class="lim">10</li>
+            </ul>
+            <button id="right"><!--<i class="fa-solid fa-chevron-right"></i>--> > </button>
+        </div>
+    </div>
+</section>

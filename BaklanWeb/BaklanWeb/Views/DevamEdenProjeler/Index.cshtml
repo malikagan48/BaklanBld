@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BaklanWeb.Models.Model.DevamEdenProjeler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DevamEdenProjelerKategori.DevamEdenProjelerKategoriAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DevamEdenProjelerBaslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DevamEdenProjelerAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DevamEdenProjelerResimURL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DevamEdenProjelerKategori.DevamEdenProjelerKategoriAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DevamEdenProjelerBaslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DevamEdenProjelerAciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DevamEdenProjelerResimURL)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.DevamEdenProjelerId }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.DevamEdenProjelerId })
+        </td>
+    </tr>
+}
+
+</table>

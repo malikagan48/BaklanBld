@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>TamamlananProjeler Ekle</h2>
+<link href="~/ckeditor/contents.css" rel="stylesheet" />
+<script type="text/javascript" src="@Url.Content("~/ckfinder/ckfinder.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/ckeditor/ckeditor.js")"></script>
+
+
+
+<div class="form">
+
+    @*<form class="form-validate form-horizontal" id="feedback_form" method="post" action="/TamamlananProjeler/Create/" enctype="multipart/form-data">*@
+    @using (Html.BeginForm("Create", "TamamlananProjeler", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken();
+        <div class="form-group ">
+            <label for="cname" class="control-label col-lg-2">Başlık <span class="required">*</span></label>
+            <div class="col-lg-10">
+                <input class="form-control" id="Baslik" name="TamamlananProjelerBaslik" minlength="5" type="text" required />
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="cemail" class="control-label col-lg-2">Kategori <span class="required">*</span></label>
+            <div class="col-lg-10">
+                @Html.DropDownList("TamamlananProjelerKategoriId", null, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="cemail" class="control-label col-lg-2">Açıklama <span class="required">*</span></label>
+            <div class="col-lg-10">
+                @Html.TextArea("TamamlananProjelerAciklama")
+                <script type="text/javascript">
+		    var editor = CKEDITOR.instances['editor1'];
+	 	    if (editor) { editor.destroy(true); }
+                    CKEDITOR.replace('TamamlananProjelerAciklama', {
+		        enterMode: CKEDITOR.ENTER_BR,
+		    });
+		    CKFinder.setupCKEditor(null, '@Url.Content("~/ckfinder/")');
+                </script>
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <label for="curl" class="control-label col-lg-2">Resim</label>
+            <div class="col-lg-10">
+                <input required type="file" class="multi" multiple="true" name="TamamlananProjelerResimURL" accept=".jpg,.png,.jpeg" />
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn btn-primary" type="submit">Kaydet</button>
+                <button class="btn btn-default" type="button"><a href="/TamamlananProjeler/Index">İptal</a></button>
+            </div>
+        </div>
+    }
+    @*</form>*@
+</div>

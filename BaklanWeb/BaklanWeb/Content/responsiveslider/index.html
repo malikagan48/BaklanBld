@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-1.9.1.js"></script>
+	<script src="jquery.bxslider.js"></script>
+	<link href="jquery.bxslider.css" rel="stylesheet" />
+
+	
+</head>
+<script>
+
+$(function(){
+  $('.bxslider').bxSlider({
+  	responsive:true,
+    mode: 'fade',
+    captions: true,
+    slideWidth: 600
+  });
+});
+</script>
+<body>
+<div class="bxslider">
+  <div><img src="images/coffee1.jpg" title="Deneme yazısı"></div>
+  <div><img src="images/coffee2.jpg" title="Test yazı"></div>
+  <div><img src="images/coffee3.jpg" title="HTML Slider"></div>
+</div>
+
+</body>
+</html>

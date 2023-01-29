@@ -1,0 +1,48 @@
+﻿
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/ckeditor/contents.css" rel="stylesheet" />
+<script type="text/javascript" src="@Url.Content("~/ckfinder/ckfinder.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/ckeditor/ckeditor.js")"></script>
+
+<h2>Müdürlük Ekle</h2>
+
+<div class="form">
+    <form class="form-validate form-horizontal" id="feedback_form" method="post" action="/Mudurlukler/Create/" enctype="multipart/form-data">
+        <div class="form-group ">
+            <label for="cname" class="control-label col-lg-2">Başlık <span class="required">*</span></label>
+            <div class="col-lg-10">
+                <input class="form-control" id="Baslik" name="MudurluklerBaslik" minlength="5" type="text" required />
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="cemail" class="control-label col-lg-2">Açıklama <span class="required">*</span></label>
+            <div class="col-lg-10">
+                @Html.TextArea("MudurluklerAciklama")
+                <script type="text/javascript">
+		    var editor = CKEDITOR.instances['editor1'];
+	 	    if (editor) { editor.destroy(true); }
+                    CKEDITOR.replace('MudurluklerAciklama', {
+		        enterMode: CKEDITOR.ENTER_BR,
+		    });
+		    CKFinder.setupCKEditor(null, '@Url.Content("~/ckfinder/")');
+                </script>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="curl" class="control-label col-lg-2">Resim</label>
+            <div class="col-lg-10">
+                <input required type="file" class="multi" multiple="true" name="MudurluklerResimURL" accept=".jpg,.png,.jpeg" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn btn-primary" type="submit">Kaydet</button>
+                <button class="btn btn-default" type="button"><a href="/Mudurlukler/Index">İptal</a></button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+﻿@model BaklanWeb.Models.Model.TurizmKategori
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Detay</h2>
+
+<div>
+    <h4>TurizmKategori</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TurizmKategoriAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TurizmKategoriAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TurizmKategoriAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TurizmKategoriAciklama)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Güncelle", "Edit", new { id = Model.TurizmKategoriId }) |
+    @Html.ActionLink("Geri Dön", "Index")
+</p>

@@ -1,0 +1,85 @@
+.news-gallery-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+    .news-gallery-container .myNewsSlides {
+        display: none;
+    }
+
+        .news-gallery-container .myNewsSlides .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0px;
+        }
+
+        .news-gallery-container .myNewsSlides img {
+            width: 100%;
+        }
+
+    .news-gallery-container .thumbnail-news .column-news {
+        float: left;
+        width: 16.66%;
+    }
+
+        .news-gallery-container .thumbnail-news .column-news .cursor {
+            cursor: pointer;
+        }
+
+        .news-gallery-container .thumbnail-news .column-news .demo {
+            opacity: 0.6;
+        }
+
+            .news-gallery-container .thumbnail-news .column-news .demo:hover {
+                opacity: 1;
+            }
+
+        .news-gallery-container .thumbnail-news .column-news img {
+            width: 134px;
+            height: 70px;
+        }
+
+    .news-gallery-container .thumbnail-news::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .news-gallery-container .caption-container {
+        text-align: center;
+        background-color: #222;
+        padding: 15px 16px;
+        color: #fff;
+    }
+
+    .news-gallery-container .prev-news,
+    .news-gallery-container .next-news {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0px 3px 3px 0px;
+        user-select: none;
+    }
+
+        .news-gallery-container .prev-news:hover,
+        .news-gallery-container .next-news:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+    .news-gallery-container .next-news {
+        right: 0px;
+        border-radius: 3px 0px 0px 3px;
+    }
+
+    .news-gallery-container .active {
+        opacity: 1;
+    }

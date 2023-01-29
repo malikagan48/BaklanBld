@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BaklanWeb.Models.Model.Duyurular>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Duyurular</h2>
+
+<p>
+    <a href="/Duyurular/Create/" class="btn btn-default">Yeni Duyuru Ekle</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DuyurularBaslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DuyurularAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DuyurularResimURL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DuyurularBaslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DuyurularAciklama)
+        </td>
+        <td>
+            <img src="@item.DuyurularResimURL" width="150" height="50" />
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id = item.DuyurularId }) |
+            @Html.ActionLink("Detay", "Details", new { id = item.DuyurularId }) |
+            @Html.ActionLink("Sil", "Delete", new { id = item.DuyurularId })
+        </td>
+    </tr>
+}
+
+</table>

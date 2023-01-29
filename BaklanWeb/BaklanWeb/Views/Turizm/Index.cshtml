@@ -1,0 +1,52 @@
+﻿@model IEnumerable<BaklanWeb.Models.Model.Turizm>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TurizmKategori.TurizmKategoriAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TurizmBaslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TurizmAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TurizmResimURL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TurizmKategori.TurizmKategoriAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TurizmBaslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TurizmAciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TurizmResimURL)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.TurizmId }) |
+       
+            @Html.ActionLink("Sil", "Delete", new { id=item.TurizmId })
+        </td>
+    </tr>
+}
+
+</table>

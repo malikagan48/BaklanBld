@@ -1,0 +1,118 @@
+* {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+bodyy {
+    font-family: 'Poppins', sans-serif;
+}
+
+.newsSliderConr {
+    width: 800px;
+    height: 600px;
+    margin:auto;
+}
+
+.newsSlider {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.newsSliderIn {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    cursor: pointer;
+}
+
+    .newsSliderIn::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        background-image: linear-gradient(to top, rgb(0, 0, 0)0%, rgba(255, 0, 0, 0)50%);
+        z-index: 999;
+    }
+
+.newsSliderInactiveee {
+    display: block;
+}
+
+/*.slideTit{
+            position: relative;
+            z-index: 99;
+        }*/
+.newsSliderIn span {
+    display: block;
+    position: absolute;
+    bottom: 10%;
+    left: 6%;
+    width: 80%;
+    z-index: 9999;
+}
+
+    .newsSliderIn span h2 {
+        color: #ffb600;
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 3rem;
+    }
+
+        .newsSliderIn span h2:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+.newsSliderIn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navSlider {
+    display: flex;
+    width: 100%;
+}
+
+    .navSlider button {
+        display: block;
+        background-color: #2a2b2d;
+        border: 0px;
+        color: aliceblue;
+        width: 80px;
+        cursor: pointer;
+    }
+
+    .navSlider ul {
+        display: flex;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navSlider li {
+        width: 100%;
+        padding: 16px;
+        background-color: #2a2b2d;
+        color: aliceblue;
+        font-weight: 600;
+        border-right: 1px solid #444;
+        list-style-type: none;
+        text-align: center;
+        cursor: pointer;
+    }
+
+        .navSlider li:first-child {
+            border-left: 1px solid #444;
+        }
+
+.activeee {
+    background-color: blueviolet !important;
+}

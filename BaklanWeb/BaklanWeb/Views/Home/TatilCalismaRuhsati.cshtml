@@ -1,0 +1,16 @@
+﻿@model BaklanWeb.Models.Model.TatilCalismaRuhsati
+
+@{
+    ViewBag.Title = "TatilCalismaRuhsati";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div class="container">
+    <div class="col-md-12">
+        <h4>TatilCalismaRuhsati Hakkında</h4>
+        <img src="~/Content/SiteLayout/img/dummies/dummy-1.jpg" alt="" class="align-center img-box img-responsive" />
+        <p>
+            @Html.Raw(Model.TatilCalismaRuhsatiAciklama)
+        </p>
+    </div>
+</div>

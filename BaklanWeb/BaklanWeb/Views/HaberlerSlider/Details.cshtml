@@ -1,0 +1,44 @@
+﻿@model BaklanWeb.Models.Model.HaberlerSlider
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Slider Detay</h2>
+
+
+<div>
+    <h4>HaberlerSlider</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HaberlerBaslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HaberlerBaslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HaberlerAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HaberlerAciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HaberlerResimURL)
+        </dt>
+
+        <dd>
+            <img src="@Model.HaberlerResimURL" width="150" height="50" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Güncelle", "Edit", new { id = Model.HaberlerSliderId }) |
+    @Html.ActionLink("Geri Dön", "Index")
+</p>

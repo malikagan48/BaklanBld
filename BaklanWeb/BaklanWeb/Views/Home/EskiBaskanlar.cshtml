@@ -1,0 +1,16 @@
+﻿@model BaklanWeb.Models.Model.EskiBaskanlar
+
+@{
+    ViewBag.Title = "EskiBaskanlar";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div class="container">
+    <div class="col-md-12">
+
+        <img src="~/Content/SiteLayout/img/dummies/dummy-1.jpg" alt="" class="align-center img-box img-responsive" />
+        <p>
+            @Html.Raw(Model.EskiBaskanlarAciklama)
+        </p>
+    </div>
+</div>

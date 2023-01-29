@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BaklanWeb.Models.Model.HaberlerSlider>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Haberler</h2>
+
+<p>
+    <a href="/HaberlerSlider/Create/" class="btn btn-default">Yeni Haber Ekle</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HaberlerBaslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HaberlerAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HaberlerResimURL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HaberlerBaslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HaberlerAciklama)
+        </td>
+        <td>
+            <img src="@item.HaberlerResimURL" width="150" height="50" />
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id = item.HaberlerSliderId }) |
+            @Html.ActionLink("Detay", "Details", new { id = item.HaberlerSliderId }) |
+            @Html.ActionLink("Sil", "Delete", new { id = item.HaberlerSliderId })
+        </td>
+    </tr>
+}
+
+</table>
